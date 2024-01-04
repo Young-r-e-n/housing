@@ -1,20 +1,42 @@
 <?php 
-include "includes/db_connection.php";
+include "../includes/db_connection.php";
 
-
+global $conn;
 // Function to create a new landlord
+
 function createLandlord($user_id, $first_name, $last_name, $national_id, $telephone_number) {
     global $conn;
-
+ 
+    // First, check if the user already exists
+    $check_user_exists = "SELECT * FROM users WHERE user_id = '$user_id'";
+    $result = $conn->query($check_user_exists);
+ 
+    if ($result->num_rows == 0) {
+        // The user does not exist, so we need to create them first
+        $default_password = '1234';
+        $hashed_password = password_hash($default_password, PASSWORD_DEFAULT);
+        $user_type = 'landlord';
+        
+        $create_user_result = createUser($user_id, $user_id, $hashed_password, $user_type);
+ 
+        // Check if the user creation was successful
+        if (strpos($create_user_result, 'User created successfully') === false) {
+            // Handle the case where user creation failed
+            return "Error creating landlord: " . $create_user_result;
+        }
+    }
+ 
+    // Now, proceed with creating the landlord
     $sql = "INSERT INTO landlords (user_id, first_name, last_name, national_id, telephone_number) 
             VALUES ('$user_id', '$first_name', '$last_name', '$national_id', '$telephone_number')";
-
+ 
     if ($conn->query($sql) === TRUE) {
         return "Landlord created successfully";
     } else {
         return "Error creating landlord: " . $conn->error;
     }
-}
+ }
+ 
 
 // Function to read landlords
 function getLandlords() {
@@ -285,21 +307,29 @@ function deleteStudent($student_id) {
 
 
 // Function to create a new user
-function createUser($username, $password, $user_type) {
+function createUser($user_id, $username, $password, $user_type) {
     global $conn;
-
+  
+    // Check if the user already exists
+    $sql = "SELECT * FROM users WHERE username = '$username'";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        // User already exists, handle accordingly
+        return "Username already taken";
+    }
+  
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-    $sql = "INSERT INTO users (username, password, user_type) 
-            VALUES ('$username', '$hashed_password', '$user_type')";
-
+  
+    $sql = "INSERT INTO users (user_id, username, password, user_type) 
+            VALUES ('$user_id', '$username', '$hashed_password', '$user_type')";
+  
     if ($conn->query($sql) === TRUE) {
         return "User created successfully";
     } else {
         return "Error creating user: " . $conn->error;
     }
-}
-
+  }
+  
 // Function to read users
 function getUsers() {
     global $conn;

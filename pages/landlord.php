@@ -34,7 +34,7 @@
           <h1>Add Landlord</h1>
           
           <!-- HTML form for adding a landlord -->
-          <form method="POST" action="">
+          <form method="POST" action="?">
             <div class="form-group">
               <label for="user_id">User ID:</label>
               <input type="text" name="user_id" class="form-control" required>
