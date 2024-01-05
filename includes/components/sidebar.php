@@ -35,60 +35,69 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                <li class="nav-item">
-            <a href="dashboard.php" class="nav-link">
+            <a href="manageUsers.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-               Student
+               Manage Users
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href=" appointments.php" class="nav-link">
+            <a href=" CreateStudent.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Appointments
+                CreateStudent
                
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href=" customers.php" class="nav-link">
+            <a href=" CReateRoom.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-               Customers
+               Create Room
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href=" delivery.php" class="nav-link">
+            <a href=" Create_Hostel.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-               Deliveries
+               Create Hostel
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href=" documents.php" class="nav-link">
+            <a href=" delete_ot_update_hostel.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-               Documents
+               Delet/update Hostel
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href=" feedback.php" class="nav-link">
+            <a href=" delete_or_update_landlord.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-               Feedback
+               Delete/Update Landlord
               </p>
             </a>
           </li>
           
           <li class="nav-item">
-            <a href=" services.php" class="nav-link">
+            <a href="manageRooms.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-               Services
+               Manage Rooms
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="landlord.php" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+               landlord
               </p>
             </a>
           </li>

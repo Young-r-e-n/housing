@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['username'] = $username;
 
             // Redirect to the dashboard
-            header("Location: ../pages/dashboard.php");
+            header("Location: ../pages/manageUsers.php");
             exit(); // Ensure that no further code is executed after the header redirect
         } else {
             echo "Invalid password";
