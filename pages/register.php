@@ -8,19 +8,19 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
 </head>
-<body class="hold-transition register-page" style="background-image:url(../dist/img/login_background.jpg);  background-repeat: no-repeat;
+<body class="hold-transition register-page" style="background-image:url(../dist/img/register.jpg);  background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover; ">
 <div class="register-box">
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="../../index2.html" class="h1"><b>IMS</b></a>
+      <a href="../../index2.html" class="h1"><b>Hostel Management System</b></a>
     </div>
     <div class="card-body">
       <p class="login-box-msg">Register a new admin account</p>

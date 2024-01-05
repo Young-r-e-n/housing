@@ -8,18 +8,18 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
 </head>
-<body class="hold-transition login-page " style="background-image:url(dist/img/login_background.jpg);  background-repeat: no-repeat;
+<body class="hold-transition login-page " style="background-image:url(dist/img/backgroundlogin.jpg);  background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover; ">
 <div class="login-box">
   <div class="login-logo text-light" >
-    <a href="index.php" class="text-white"><b>Housing</b></a>
+    <a href="index.php" class="text-white"><b>Hostel Management System</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">

@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="IMS Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">IMS</span>
+      <span class="brand-text font-weight-light">HMS</span>
     </a>
 
     <!-- Sidebar -->
@@ -38,7 +38,7 @@
             <a href="dashboard.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-               Dashboard
+               Student
               </p>
             </a>
           </li>
