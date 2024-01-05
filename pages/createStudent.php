@@ -1,57 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <!-- Include necessary styles and scripts here -->
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>IMS</title>
 
-// Function to create a new student
-function createStudent($user_id, $admission_number, $first_name, $last_name, $telephone_number) {
-    global $conn;
+ <!-- Google Font: Source Sans Pro -->
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+ <!-- Font Awesome Icons -->
+ <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+ <!-- Theme style -->
+ <link rel="stylesheet" href="../dist/css/adminlte.min.css">
 
-    $sql = "INSERT INTO students (user_id, admission_number, first_name, last_name, telephone_number) 
-            VALUES ('$user_id', '$admission_number', '$first_name', '$last_name', '$telephone_number')";
+ <!-- jQuery library -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    if ($conn->query($sql) === TRUE) {
-        return "Student created successfully";
-    } else {
-        return "Error creating student: " . $conn->error;
-    }
-}
+ <!-- DataTables CSS and JS library -->
+ <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"/>
+ <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 
-// Function to read students
-function getStudents() {
-    global $conn;
+</head>
+<body class="hold-transition sidebar-mini">
+ <div class="wrapper">
+ <?php include "../includes/components/navbar.php"; ?>
+ <?php include "../includes/components/sidebar.php"; ?>
 
-    $sql = "SELECT * FROM students";
-    $result = $conn->query($sql);
+ <div class="content-wrapper">
+ <div class="content">
+ <div class="container-fluid">
+  <h1>Create Student</h1>
+   
+   <!-- HTML form for creating a student -->
+   <form method="POST" action="?">
+     <div class="form-group">
+       <label for="user_id">User ID:</label>
+       <input type="text" name="user_id" class="form-control" required>
+     </div>
 
-    if ($result->num_rows > 0) {
-        return $result->fetch_all(MYSQLI_ASSOC);
-    } else {
-        return "No students found";
-    }
-}
+     <div class="form-group">
+       <label for="admission_number">Admission Number:</label>
+       <input type="text" name="admission_number" class="form-control" required>
+     </div>
 
-// Function to update a student
-function updateStudent($student_id, $user_id, $admission_number, $first_name, $last_name, $telephone_number) {
-    global $conn;
+     <div class="form-group">
+       <label for="first_name">First Name:</label>
+       <input type="text" name="first_name" class="form-control" required>
+     </div>
 
-    $sql = "UPDATE students 
-            SET user_id='$user_id', admission_number='$admission_number', 
-            first_name='$first_name', last_name='$last_name', telephone_number='$telephone_number' 
-            WHERE student_id='$student_id'";
+     <div class="form-group">
+       <label for="last_name">Last Name:</label>
+       <input type="text" name="last_name" class="form-control" required>
+     </div>
 
-    if ($conn->query($sql) === TRUE) {
-        return "Student updated successfully";
-    } else {
-        return "Error updating student: " . $conn->error;
-    }
-}
+     <div class="form-group">
+       <label for="telephone_number">Telephone Number:</label>
+       <input type="text" name="telephone_number" class="form-control" required>
+     </div>
 
-// Function to delete a student
-function deleteStudent($student_id) {
-    global $conn;
+     <button type="submit" class="btn btn-primary">Create Student</button>
+   </form>
 
-    $sql = "DELETE FROM students WHERE student_id='$student_id'";
+   <?php
+     // Include your operations.php file
+     include "operations.php";
 
-    if ($conn->query($sql) === TRUE) {
-        return "Student deleted successfully";
-    } else {
-        return "Error deleting student: " . $conn->error;
-    }
-}
+     // Check if the form is submitted
+     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+       // Get form data
+       $user_id = $_POST["user_id"];
+       $admission_number = $_POST["admission_number"];
+       $first_name = $_POST["first_name"];
+       $last_name = $_POST["last_name"];
+       $telephone_number = $_POST["telephone_number"];
+
+       // Call the createStudent function from operations.php
+       $result = createStudent($user_id, $admission_number, $first_name, $last_name, $telephone_number);
+
+       // Display the result
+       echo "<p>{$result}</p>";
+     }
+   ?>
+ </div>
+ </div>
+ </div>
+
+ <?php include "../includes/components/footer.php"; ?>
+ </div>
+</body>
+</html>
